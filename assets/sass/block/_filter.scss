@@ -1,0 +1,13 @@
+.filter-sec {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.filter-sec__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

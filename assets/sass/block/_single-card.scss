@@ -1,0 +1,21 @@
+.single-card{
+    display: flex;
+    gap: 10px;
+    width: 90vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 1px 1px 2px black, 0 0 25px #000000, 0 0 5px #000000;
+    padding: 10px;
+}
+.single-card img{
+    width: 50%;
+}
+.single-card__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.hide{
+    display: none;
+}
