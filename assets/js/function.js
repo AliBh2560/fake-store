@@ -55,7 +55,7 @@ function render(list) {
             <img src="${item.image}" alt="">
             <span class="card__content">
                 <h2>${item.title.length > 10 ? item.title.slice(0, 10) + dot : item.title}</h2>
-                <i onclick="renderCard(${index})" class="gg-arrow-right-r"></i>
+                <i onclick="handleCard(${item.id})" class="gg-arrow-right-r"></i>
             </span>
         </div> 
         
@@ -92,18 +92,26 @@ function addToShop(index) {
     filter()
 }
 
-function renderCard(index) {
+function handleCard(index) {
+    fetch(`https://fakestoreapi.com/products/${index}`)
+        .then(res => res.json())
+        .then(json => renderCard(json))
+
+
+}
+
+function renderCard(item) {
     filterContainer.classList.add('hide')
     root.innerHTML = `
     <div class="single-card">
     <i onclick="closeCard()" class="gg-arrow-left"></i>
-        <img src="${items[index].image}" alt="">
+        <img src="${item.image}" alt="">
         <span class="single-card__content">
-            <h2>${items[index].title}</h2>
-            <p>${items[index].price}</p>
-            <p>${items[index].rating.rate}</p>
-            <p>${items[index].category}</p>
-            <p>${items[index].description}</p>
+            <h2>${item.title}</h2>
+            <p>${item.price}</p>
+            <p>${item.rating.rate}</p>
+            <p>${item.category}</p>
+            <p>${item.description}</p>
         </span>
     </div>
     `
